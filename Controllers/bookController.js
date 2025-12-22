@@ -14,3 +14,14 @@ try {
 }
 }
 
+//update
+
+export const updateBook= async(req,res)=>{
+    try {
+        const book=await Book.findByIdAndUpdate(req.params.id, req.body)
+        res.json(book)
+    } catch (error) {
+        res.json({message:error.message})
+    }
+}
+
